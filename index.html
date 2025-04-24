@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formularz rejestracji</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+  <link rel="icon" href="icon.png" sizes="192x192" type="image/png">
+
+
+
+
+  <style>
+    body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+    input { display: block; margin-bottom: 10px; padding: 8px; width: 100%; max-width: 300px; }
+    button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    #result { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>formularz </h1>
+  <form id="fullForm">
+    <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Haslo" required>
+    <input type="password" id="confirmPassword" placeholder="Powtórz hasło" required>
+    <button type="submit">Wyślij</button>
+  </form>
+
+  <div id="result"></div>
+
+
+
+
+
+  <script src="script.js"></script>
+
+
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("✅ sw gotowe"))
+        .catch(err => console.error("❌ Błąd:", err));
+    }
+  </script>
+
+</body>
+</html>
